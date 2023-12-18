@@ -21,6 +21,7 @@ const checkWorkingHours = (req, res, next) => {
 };
 
 // Set up EJS as the view engine
+app.set("views", "/views");
 app.set("view engine", "ejs");
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
