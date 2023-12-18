@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -19,9 +20,9 @@ const checkWorkingHours = (req, res, next) => {
 
   next();
 };
-
+const viewsDir = path.join(__dirname, "views");
 // Set up EJS as the view engine
-app.set("views", "/views");
+app.set("views", viewsDir);
 app.set("view engine", "ejs");
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
