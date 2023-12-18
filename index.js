@@ -20,11 +20,11 @@ const checkWorkingHours = (req, res, next) => {
 
   next();
 };
-const viewsDir = path.join(__dirname, "views");
+const viewsDir = path.join(__dirname, "./views");
 // Set up EJS as the view engine
 app.set("views", viewsDir);
 app.set("view engine", "ejs");
-app.use(express.static("public")); // Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "./public"))); // Serve static files from the 'public' directory
 
 // Use the custom middleware for all routes
 app.use(checkWorkingHours);
